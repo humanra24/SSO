@@ -21,9 +21,9 @@ class Login extends CI_Controller
     public function index()
     {
         $google_client = new Google_Client();
-        $google_client->setClientId('251428547486-ibnttje6sru8tv56d5qrhhm8mq8dk0sk.apps.googleusercontent.com'); //Define your ClientID
-        $google_client->setClientSecret('W0gYSZTz_kEtA6qTgIjJufB9'); //Define your Client Secret Key
-        $google_client->setRedirectUri('http://localhost/SSO/Login/with_google'); //Define your Redirect Uri
+        $google_client->setClientId('xxxx'); //Define your ClientID
+        $google_client->setClientSecret('xxx'); //Define your Client Secret Key
+        $google_client->setRedirectUri('xxx'); //Define your Redirect Uri
         $google_client->addScope('email');
         $google_client->addScope('profile');
         
@@ -63,11 +63,11 @@ public function with_google()
     require "vendor/autoload.php";
     $google_client = new Google_Client();
 
-    $google_client->setClientId('251428547486-ibnttje6sru8tv56d5qrhhm8mq8dk0sk.apps.googleusercontent.com'); //Define your ClientID
+    $google_client->setClientId('xxx'); //Define your ClientID
 
-    $google_client->setClientSecret('W0gYSZTz_kEtA6qTgIjJufB9'); //Define your Client Secret Key
+    $google_client->setClientSecret('xxx'); //Define your Client Secret Key
 
-    $google_client->setRedirectUri('http://localhost/SSO/Login/with_google'); //Define your Redirect Uri
+    $google_client->setRedirectUri('xxx'); //Define your Redirect Uri
 
     $google_client->addScope('email');
 
