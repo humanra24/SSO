@@ -1,0 +1,104 @@
+<body class="bg-gradient-primary">
+
+	<div class="container">
+		<!-- Outer Row -->
+		<div class="row justify-content-center">
+
+			<div class="col-xl-6 col-lg-8 col-md-8">
+
+				<div class="card o-hidden border-0 shadow-lg my-5">
+					<div class="card-body p-0">
+						<!-- Nested Row within Card Body -->
+						<div class="row">
+							<div class="col-lg-1 d-none d-lg-block">
+							</div>
+							<div class="col-lg-10">
+
+								<div class="p-5">
+									<div class="text-center">
+										<h1 class="h4 text-gray-900 mb-4"><strong>Login Sistem SSO</strong></h1>
+									</div>
+
+									<form action="<?= base_url('login/aksi_login');?>" method="post">
+										<div class="form-group">
+											<input type="email" name="email" class="form-control form-control-user"
+												id="exampleInputEmail" aria-describedby="emailHelp"
+												placeholder="Enter Email Address...">
+										</div>
+										<div class="form-group">
+											<input type="password" name="password"
+												class="form-control form-control-user" id="exampleInputPassword"
+												placeholder="Password">
+										</div>
+										<!-- <div class="form-group">
+											<div class="custom-control custom-checkbox small">
+												<input type="checkbox" class="custom-control-input" id="customCheck">
+												<label class="custom-control-label" for="customCheck">Remember
+													Me</label>
+											</div>
+										</div> -->
+										<button type="submit" class="btn btn-primary btn-user btn-block">
+											Login
+										</button>
+
+									</form>
+									<hr>
+									<center>atau</center>
+
+
+									<!-- <div class="text-center">
+										<a class="small" href="<?= base_url('login/lupa_pass'); ?>">Forgot Password?</a>
+									</div> -->
+
+									<div class="row">
+									<div class="col col-xl-6"><?= '<span align="center">' . $login_button . '</span>'; ?></div>
+									<div class="col col-xl-6"><a href="<?= $facebook_login_url; ?>" title="Login dengan facebook" class="">
+										<img class="rounded float-end" src="http:\\localhost\sso\assets\img\fb.png"
+											alt="">
+									</a></div>
+									</div>
+									<br>									
+
+									
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<?php if ($this->session->flashdata('flash')) : ?>
+	<script type='text/javascript'>
+		alert('Email atau Password Anda Salah!');
+
+	</script>";
+	<?php endif; ?>
+
+	<?php if ($this->session->flashdata('fb')) : ?>
+	<script type='text/javascript'>
+		var yakin = confirm(
+			"Akun facebook anda tidak terdaftar pada sistem! silahkan logout dahulu di facebook.com atau tekan 'OK' untuk menuju link "
+		);
+		if (yakin) {
+			window.open('https://www.facebook.com', '_blank');
+		}
+
+	</script>";
+	<?php endif; ?>
+
+	<?php if ($this->session->flashdata('google')) : ?>
+	<script type='text/javascript'>
+		var yakin = confirm(
+			"Akun google anda tidak terdaftar pada sistem! silahkan logout dahulu atau tekan 'OK' untuk menuju link ");
+		if (yakin) {
+			window.open('https://accounts.google.com/logout', '_blank');
+		}
+
+	</script>";
+	<?php endif; ?>
